@@ -1,46 +1,37 @@
 # Node App to test valid credit card number
 
-To run the server, navigate to server folder using:
+Project Description: This project contains two folders: UI and server. The UI folder contains a React app, while the server folder contains an Express Node.js app. The purpose of the project is to test valid credit card numbers.
 
-### `cd server` 
+## Running the Server
 
-and to run the express service, run
+1) Open your terminal and navigate to the server folder using the command:
+ `cd server` 
 
-### `yarn install`
+2) Install the dependencies by running:
+`yarn install`
 
-to install all the dependencies, and then
+3) Start the Express service by running:
+`node index.js`
 
-### `node index.js`
+5) The server will now run on port 3001. If you want to change the port, modify the following line in index.js:
+`const port = 3001;`
 
-It will run your code on `3001` port, if you want to change it, you can do so by changing `port` value
+NOTE: If you change the port, don't forget to update it in `UI/src/App.js` as well.
 
-### `const port = 3001;`
+## Running the UI
 
-If you change the port, please update it in `UI/src/App.js` also.
+1) Open another terminal window and navigate to the UI folder using the command:
+`cd UI`
 
-To Run the UI, navigate to UI folder using:
+2) Use the same package manager you used for the server (either npm or yarn) and start the development server:
+```
+npm start
+# or
+yarn start
+```
 
-### `cd UI` 
+3) The React app will now run on http://localhost:3000 in your browser.
 
-In the project directory, you can run:
+Important Note:
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+If the UI makes requests to the server running on a different port (e.g., UI on port 3000, server on port 3001), you may need to handle CORS. Consider using the cors package in Express to allow cross-origin requests from the UI.
